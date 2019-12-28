@@ -6,9 +6,8 @@
 [travis-url]: https://travis-ci.org/nestjs/nest
 [linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
 [linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
+ 
+<p align="center">
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
@@ -26,7 +25,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Simple API using the [Nest](https://github.com/nestjs/nest) framework w/ TypeScript.
 
 ## Installation
 
@@ -46,6 +45,32 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+## Usage
+
+While running the API make a request to '/items' like the example below
+
+```bash
+$ curl -H 'Content-Type: application/json' -d '{
+  "name": "Taco",
+  "price": 3
+}' http://localhost:3000/items
+```
+
+Inserting invalid data will result in the following response:
+
+```bash
+{"statusCode":400,"error":"Bad Request","message":"Validation failed"}
+```
+
+I've also included a fake controller which can act as a service, simply make a call to 
+
+```bash
+$ curl http://localhost:3000/shopping-cart
+```
+
+Response : `My fake service.`
+
 
 ## Test
 
